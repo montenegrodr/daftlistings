@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Daftlistings by AnthonyBloomer</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Daftlistings</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/AnthonyBloomer/daftlistings">View the Project on GitHub <small>AnthonyBloomer/daftlistings</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/AnthonyBloomer/daftlistings/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/AnthonyBloomer/daftlistings/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/AnthonyBloomer/daftlistings">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="daftlistings" class="anchor" href="#daftlistings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>daftlistings</h1>
+
+<p>A web scraper for daft.ie</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+
+<pre><code>pip install daftlistings
+</code></pre>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
+
+<div class="highlight highlight-source-python"><pre>
+<span class="pl-k">from</span> daftlistings <span class="pl-k">import</span> Daft
+
+d <span class="pl-k">=</span> Daft()
+offset <span class="pl-k">=</span> <span class="pl-c1">0</span>
+pages <span class="pl-k">=</span> <span class="pl-c1">True</span>
+
+<span class="pl-k">while</span> pages:
+
+    listings <span class="pl-k">=</span> d.get_listings(
+        <span class="pl-v">county</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>Dublin City<span class="pl-pds">'</span></span>,
+        <span class="pl-v">area</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>Dublin 15<span class="pl-pds">'</span></span>,
+        <span class="pl-v">offset</span><span class="pl-k">=</span>offset,
+        <span class="pl-v">listing_type</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>properties<span class="pl-pds">'</span></span>
+    )
+
+    <span class="pl-k">if</span> <span class="pl-k">not</span> listings:
+        pages <span class="pl-k">=</span> <span class="pl-c1">False</span>
+
+    <span class="pl-k">for</span> listing <span class="pl-k">in</span> listings:
+        <span class="pl-c1">print</span> listing.get_agent_url()
+        <span class="pl-c1">print</span> listing.get_price()
+        <span class="pl-c1">print</span> listing.get_formalised_address()
+        <span class="pl-c1">print</span> listing.get_link()
+        <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span>
+
+
+    offset <span class="pl-k">+=</span> <span class="pl-c1">10</span></pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/AnthonyBloomer">AnthonyBloomer</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
