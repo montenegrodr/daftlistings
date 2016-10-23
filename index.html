@@ -1,82 +1,262 @@
-<!doctype html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Daftlistings by AnthonyBloomer</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="./img/favicon.ico">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
+    <title>daftlistings</title>
+
+    <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="./css/base.css" rel="stylesheet">
+    <link href="./css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Daftlistings</h1>
-        <p></p>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 
-        <p class="view"><a href="https://github.com/AnthonyBloomer/daftlistings">View the Project on GitHub <small>AnthonyBloomer/daftlistings</small></a></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
 
+    
+</head>
 
-        <ul>
-          <li><a href="https://github.com/AnthonyBloomer/daftlistings/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/AnthonyBloomer/daftlistings/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/AnthonyBloomer/daftlistings">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a id="daftlistings" class="anchor" href="#daftlistings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>daftlistings</h1>
+<body class="homepage" >
 
-<p>A web scraper for daft.ie</p>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
 
-<h2>
-<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
 
-<pre><code>pip install daftlistings
+            <!-- Main title -->
+            <a class="navbar-brand" href=".">daftlistings</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#daftlistings">daftlistings</a></li>
+        
+            <li class="second-level"><a href="#installation">Installation</a></li>
+            
+        
+            <li class="second-level"><a href="#developing-locally">Developing locally</a></li>
+            
+        
+            <li class="second-level"><a href="#example">Example</a></li>
+            
+        
+            <li class="second-level"><a href="#methods">Methods</a></li>
+            
+                <li class="third-level"><a href="#get_listings">get_listings()</a></li>
+            
+                <li class="third-level"><a href="#get_address_line_1">get_address_line_1()</a></li>
+            
+                <li class="third-level"><a href="#get_address_line_2">get_address_line_2()</a></li>
+            
+                <li class="third-level"><a href="#get_town">get_town()</a></li>
+            
+                <li class="third-level"><a href="#get_county">get_county()</a></li>
+            
+                <li class="third-level"><a href="#get_formalised_address">get_formalised_address()</a></li>
+            
+                <li class="third-level"><a href="#get_listing_image">get_listing_image()</a></li>
+            
+                <li class="third-level"><a href="#get_agent">get_agent()</a></li>
+            
+                <li class="third-level"><a href="#get_agent_url">get_agent_url()</a></li>
+            
+                <li class="third-level"><a href="#get_daft_link">get_daft_link()</a></li>
+            
+                <li class="third-level"><a href="#get_dwelling_type">get_dwelling_type()</a></li>
+            
+                <li class="third-level"><a href="#get_posted_since">get_posted_since()</a></li>
+            
+                <li class="third-level"><a href="#get_num_bedrooms">get_num_bedrooms()</a></li>
+            
+                <li class="third-level"><a href="#get_num_bathrooms">get_num_bathrooms()</a></li>
+            
+                <li class="third-level"><a href="#get_price">get_price()</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="daftlistings">daftlistings</h1>
+<p>A web scraper for Daft.ie</p>
+<h2 id="installation">Installation</h2>
+<pre><code>virtualenv env
+source env/bin/activate
+pip install daftlistings
 </code></pre>
+<h2 id="developing-locally">Developing locally</h2>
+<pre><code>git clone https://github.com/AnthonyBloomer/daftlistings.git
+cd daftlistings
+virtualenv env
+source env/bin/activate
+pip install -r requirements.txt
+</code></pre>
+<h2 id="example">Example</h2>
+<pre><code>from daftlistings import Daft
 
-<h2>
-<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
+d = Daft()
+offset = 0
+pages = True
 
-<div class="highlight highlight-source-python"><pre>
-<span class="pl-k">from</span> daftlistings <span class="pl-k">import</span> Daft
+while pages:
 
-d <span class="pl-k">=</span> Daft()
-offset <span class="pl-k">=</span> <span class="pl-c1">0</span>
-pages <span class="pl-k">=</span> <span class="pl-c1">True</span>
-
-<span class="pl-k">while</span> pages:
-
-    listings <span class="pl-k">=</span> d.get_listings(
-        <span class="pl-v">county</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>Dublin City<span class="pl-pds">'</span></span>,
-        <span class="pl-v">area</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>Dublin 15<span class="pl-pds">'</span></span>,
-        <span class="pl-v">offset</span><span class="pl-k">=</span>offset,
-        <span class="pl-v">listing_type</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>properties<span class="pl-pds">'</span></span>
+    listings = d.get_listings(
+        county='Dublin City',
+        area='Dublin 15',
+        offset=offset,
+        listing_type='properties'
     )
 
-    <span class="pl-k">if</span> <span class="pl-k">not</span> listings:
-        pages <span class="pl-k">=</span> <span class="pl-c1">False</span>
+    if not listings:
+    pages = False
 
-    <span class="pl-k">for</span> listing <span class="pl-k">in</span> listings:
-        <span class="pl-c1">print</span> listing.get_agent_url()
-        <span class="pl-c1">print</span> listing.get_price()
-        <span class="pl-c1">print</span> listing.get_formalised_address()
-        <span class="pl-c1">print</span> listing.get_daft_link()
-        <span class="pl-c1">print</span> <span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span>
+    for listing in listings:
+    print listing.get_agent_url()
+    print listing.get_price()
+    print listing.get_formalised_address()
+    print listing.get_daft_link()
+    print ' '
 
 
-    offset <span class="pl-k">+=</span> <span class="pl-c1">10</span></pre></div>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/AnthonyBloomer">AnthonyBloomer</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+    offset += 10
+</code></pre>
+<h2 id="methods">Methods</h2>
+<h3 id="get_listings">get_listings()</h3>
+<p>The <strong>get_listings</strong> method accepts the following parameters.</p>
+<p><strong>max_beds</strong>: The maximum number of beds.<br />
+<strong>min_beds</strong>: The minimum number of beds.<br />
+<strong>max_price</strong>: The maximum value of the listing<br />
+<strong>min_price</strong>: The minimum value of the listing<br />
+<strong>county</strong>: The county to get listings for.<br />
+<strong>area</strong>: The area in the county to get listings for. Optional.<br />
+<strong>offset</strong>: The page number.<br />
+<strong>listing_type</strong>: The listings you'd like to scrape i.e houses, properties, auction or apartments.<br />
+<strong>sale_agreed</strong>: If set to True, we'll scrape listings that are sale agreed.<br />
+<strong>sale_type</strong>: Retrieve listings of a certain sale type. Can be set to 'sale' or 'rent'.<br />
+<strong>sort_by</strong>: Sorts the listing. Can be set to 'date', 'distance', 'prince' or 'upcoming_viewing'.<br />
+<strong>sort_order</strong>: 'd' for descending, 'a' for ascencing.</p>
+<h3 id="get_address_line_1">get_address_line_1()</h3>
+<p>This method returns line 1 of the listing address.</p>
+<h3 id="get_address_line_2">get_address_line_2()</h3>
+<p>This method returns line 2 of the listing address.</p>
+<h3 id="get_town">get_town()</h3>
+<p>This method returns the town.</p>
+<h3 id="get_county">get_county()</h3>
+<p>This method returns the county.</p>
+<h3 id="get_formalised_address">get_formalised_address()</h3>
+<p>This method returns the full address.</p>
+<h3 id="get_listing_image">get_listing_image()</h3>
+<p>This method returns the URL of the listing image.</p>
+<h3 id="get_agent">get_agent()</h3>
+<p>This method returns the agent name.</p>
+<h3 id="get_agent_url">get_agent_url()</h3>
+<p>This method returns the agent URL.</p>
+<h3 id="get_daft_link">get_daft_link()</h3>
+<p>This method returns the URL of the listing.</p>
+<h3 id="get_dwelling_type">get_dwelling_type()</h3>
+<p>This method returns the dwelling type.</p>
+<h3 id="get_posted_since">get_posted_since()</h3>
+<p>This method returns the date the listing was posted.</p>
+<h3 id="get_num_bedrooms">get_num_bedrooms()</h3>
+<p>This method returns the number of bedrooms.</p>
+<h3 id="get_num_bathrooms">get_num_bathrooms()</h3>
+<p>This method returns the number of bathrooms.</p>
+<h3 id="get_price">get_price()</h3>
+<p>This method returns the price.</p></div>
+        
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="./js/jquery-1.10.2.min.js"></script>
+    <script src="./js/bootstrap-3.0.3.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '.';
+    </script>
+    <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+    <script src="./js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
 </html>
+
+<!--
+MkDocs version : 0.15.3
+Build Date UTC : 2016-10-23 20:01:05.359002
+-->

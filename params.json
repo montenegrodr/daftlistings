@@ -1,6 +1,0 @@
-{
-  "name": "Daftlistings",
-  "tagline": "",
-  "body": "# daftlistings\r\nA web scraper for daft.ie\r\n\r\n\r\n## Install\r\n\r\n```\r\npip install daftlistings\r\n```\r\n\r\n## Example\r\n\r\n\r\n```python\r\n\r\nfrom daftlistings import Daft\r\n\r\nd = Daft()\r\noffset = 0\r\npages = True\r\n\r\nwhile pages:\r\n\r\n    listings = d.get_listings(\r\n        county='Dublin City',\r\n        area='Dublin 15',\r\n        offset=offset,\r\n        listing_type='properties'\r\n    )\r\n\r\n    if not listings:\r\n        pages = False\r\n\r\n    for listing in listings:\r\n        print listing.get_agent_url()\r\n        print listing.get_price()\r\n        print listing.get_formalised_address()\r\n        print listing.get_daft_link()\r\n        print ' '\r\n\r\n\r\n    offset += 10\r\n```",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}

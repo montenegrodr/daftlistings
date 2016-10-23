@@ -1,0 +1,109 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "daftlistings\n\n\nA web scraper for Daft.ie\n\n\nInstallation\n\n\nvirtualenv env\nsource env/bin/activate\npip install daftlistings\n\n\n\nDeveloping locally\n\n\ngit clone https://github.com/AnthonyBloomer/daftlistings.git\ncd daftlistings\nvirtualenv env\nsource env/bin/activate\npip install -r requirements.txt\n\n\n\nExample\n\n\nfrom daftlistings import Daft\n\nd = Daft()\noffset = 0\npages = True\n\nwhile pages:\n\n    listings = d.get_listings(\n        county='Dublin City',\n        area='Dublin 15',\n        offset=offset,\n        listing_type='properties'\n    )\n\n    if not listings:\n    pages = False\n\n    for listing in listings:\n    print listing.get_agent_url()\n    print listing.get_price()\n    print listing.get_formalised_address()\n    print listing.get_daft_link()\n    print ' '\n\n\n    offset += 10\n\n\n\nMethods\n\n\nget_listings()\n\n\nThe \nget_listings\n method accepts the following parameters.\n\n\nmax_beds\n: The maximum number of beds.\n\n\nmin_beds\n: The minimum number of beds.\n\n\nmax_price\n: The maximum value of the listing\n\n\nmin_price\n: The minimum value of the listing\n\n\ncounty\n: The county to get listings for.\n\n\narea\n: The area in the county to get listings for. Optional.\n\n\noffset\n: The page number.\n\n\nlisting_type\n: The listings you'd like to scrape i.e houses, properties, auction or apartments.\n\n\nsale_agreed\n: If set to True, we'll scrape listings that are sale agreed.\n\n\nsale_type\n: Retrieve listings of a certain sale type. Can be set to 'sale' or 'rent'.\n\n\nsort_by\n: Sorts the listing. Can be set to 'date', 'distance', 'prince' or 'upcoming_viewing'.\n\n\nsort_order\n: 'd' for descending, 'a' for ascencing.\n\n\nget_address_line_1()\n\n\nThis method returns line 1 of the listing address.\n\n\nget_address_line_2()\n\n\nThis method returns line 2 of the listing address.\n\n\nget_town()\n\n\nThis method returns the town.\n\n\nget_county()\n\n\nThis method returns the county.\n\n\nget_formalised_address()\n\n\nThis method returns the full address.\n\n\nget_listing_image()\n\n\nThis method returns the URL of the listing image.\n\n\nget_agent()\n\n\nThis method returns the agent name.\n\n\nget_agent_url()\n\n\nThis method returns the agent URL.\n\n\nget_daft_link()\n\n\nThis method returns the URL of the listing.\n\n\nget_dwelling_type()\n\n\nThis method returns the dwelling type.\n\n\nget_posted_since()\n\n\nThis method returns the date the listing was posted.\n\n\nget_num_bedrooms()\n\n\nThis method returns the number of bedrooms.\n\n\nget_num_bathrooms()\n\n\nThis method returns the number of bathrooms.\n\n\nget_price()\n\n\nThis method returns the price.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#daftlistings", 
+            "text": "A web scraper for Daft.ie", 
+            "title": "daftlistings"
+        }, 
+        {
+            "location": "/#installation", 
+            "text": "virtualenv env\nsource env/bin/activate\npip install daftlistings", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#developing-locally", 
+            "text": "git clone https://github.com/AnthonyBloomer/daftlistings.git\ncd daftlistings\nvirtualenv env\nsource env/bin/activate\npip install -r requirements.txt", 
+            "title": "Developing locally"
+        }, 
+        {
+            "location": "/#example", 
+            "text": "from daftlistings import Daft\n\nd = Daft()\noffset = 0\npages = True\n\nwhile pages:\n\n    listings = d.get_listings(\n        county='Dublin City',\n        area='Dublin 15',\n        offset=offset,\n        listing_type='properties'\n    )\n\n    if not listings:\n    pages = False\n\n    for listing in listings:\n    print listing.get_agent_url()\n    print listing.get_price()\n    print listing.get_formalised_address()\n    print listing.get_daft_link()\n    print ' '\n\n\n    offset += 10", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/#methods", 
+            "text": "", 
+            "title": "Methods"
+        }, 
+        {
+            "location": "/#get_listings", 
+            "text": "The  get_listings  method accepts the following parameters.  max_beds : The maximum number of beds.  min_beds : The minimum number of beds.  max_price : The maximum value of the listing  min_price : The minimum value of the listing  county : The county to get listings for.  area : The area in the county to get listings for. Optional.  offset : The page number.  listing_type : The listings you'd like to scrape i.e houses, properties, auction or apartments.  sale_agreed : If set to True, we'll scrape listings that are sale agreed.  sale_type : Retrieve listings of a certain sale type. Can be set to 'sale' or 'rent'.  sort_by : Sorts the listing. Can be set to 'date', 'distance', 'prince' or 'upcoming_viewing'.  sort_order : 'd' for descending, 'a' for ascencing.", 
+            "title": "get_listings()"
+        }, 
+        {
+            "location": "/#get_address_line_1", 
+            "text": "This method returns line 1 of the listing address.", 
+            "title": "get_address_line_1()"
+        }, 
+        {
+            "location": "/#get_address_line_2", 
+            "text": "This method returns line 2 of the listing address.", 
+            "title": "get_address_line_2()"
+        }, 
+        {
+            "location": "/#get_town", 
+            "text": "This method returns the town.", 
+            "title": "get_town()"
+        }, 
+        {
+            "location": "/#get_county", 
+            "text": "This method returns the county.", 
+            "title": "get_county()"
+        }, 
+        {
+            "location": "/#get_formalised_address", 
+            "text": "This method returns the full address.", 
+            "title": "get_formalised_address()"
+        }, 
+        {
+            "location": "/#get_listing_image", 
+            "text": "This method returns the URL of the listing image.", 
+            "title": "get_listing_image()"
+        }, 
+        {
+            "location": "/#get_agent", 
+            "text": "This method returns the agent name.", 
+            "title": "get_agent()"
+        }, 
+        {
+            "location": "/#get_agent_url", 
+            "text": "This method returns the agent URL.", 
+            "title": "get_agent_url()"
+        }, 
+        {
+            "location": "/#get_daft_link", 
+            "text": "This method returns the URL of the listing.", 
+            "title": "get_daft_link()"
+        }, 
+        {
+            "location": "/#get_dwelling_type", 
+            "text": "This method returns the dwelling type.", 
+            "title": "get_dwelling_type()"
+        }, 
+        {
+            "location": "/#get_posted_since", 
+            "text": "This method returns the date the listing was posted.", 
+            "title": "get_posted_since()"
+        }, 
+        {
+            "location": "/#get_num_bedrooms", 
+            "text": "This method returns the number of bedrooms.", 
+            "title": "get_num_bedrooms()"
+        }, 
+        {
+            "location": "/#get_num_bathrooms", 
+            "text": "This method returns the number of bathrooms.", 
+            "title": "get_num_bathrooms()"
+        }, 
+        {
+            "location": "/#get_price", 
+            "text": "This method returns the price.", 
+            "title": "get_price()"
+        }
+    ]
+}
