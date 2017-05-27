@@ -167,24 +167,36 @@ pip install daftlistings
 <h2 id="developing-locally">Developing locally</h2>
 <pre><code>git clone https://github.com/AnthonyBloomer/daftlistings.git
 cd daftlistings
+git checkout develop
 virtualenv env
 source env/bin/activate
 pip install -r requirements.txt
 </code></pre>
 <h2 id="examples">Examples</h2>
 <p>Get the current properties for rent in Dublin that are between €1000 and €1500 per month.</p>
-<pre><code>from daftlistings import Daft
+<pre><code>from daftlistings import Daft, CommercialType, SaleType, RentType
 
 d = Daft()
 
 listings = d.get_listings(
     county='Dublin City',
     area='Dublin 15',
-    listing_type='apartments',
+    listing_type=RentType.APARTMENTS,
     min_price=1000,
     max_price=1500,
     sale_type='rent'
-    )
+)
+
+for listing in listings:
+    print(listing.get_formalised_address())
+    print(listing.get_daft_link())
+</code></pre>
+<p>Retrieve commercial office listings in Dublin.</p>
+<pre><code>listings = daft.get_listings(
+    county='Dublin',
+    listing_type=SaleType.COMMERCIAL,
+    commercial_property_type=CommercialType.OFFICE
+)
 
 for listing in listings:
     print(listing.get_formalised_address())
@@ -194,7 +206,7 @@ for listing in listings:
 <pre><code>listings = d.get_listings(
     county='Dublin City',
     area='Dublin 15',
-    listing_type='properties',
+    listing_type=SaleType.PROPERTIES,
     sale_agreed=True,
     min_price=200000,
     max_price=250000
@@ -204,7 +216,7 @@ for listing in listings:
     print(listing.get_formalised_address())
     print(listing.get_daft_link())
 </code></pre>
-<p>Retreive all properties for sale in Dublin.</p>
+<p>Retrieve all properties for sale in Dublin.</p>
 <pre><code>from daftlistings import Daft
 
 d = Daft()
@@ -217,7 +229,7 @@ while pages:
         county='Dublin City',
         area='Dublin 15',
         offset=offset,
-        listing_type='properties'
+        listing_type=SaleType.PROPERTIES
     )
 
     if not listings:
@@ -243,11 +255,12 @@ while pages:
 <strong>county</strong>: The county to get listings for.<br />
 <strong>area</strong>: The area in the county to get listings for. Optional.<br />
 <strong>offset</strong>: The page number.<br />
-<strong>listing_type</strong>: The listings you'd like to scrape i.e houses, properties, auction or apartments.<br />
-<strong>sale_agreed</strong>: If set to True, we'll scrape listings that are sale agreed.<br />
 <strong>sale_type</strong>: Retrieve listings of a certain sale type. Can be set to 'sale' or 'rent'.<br />
-<strong>sort_by</strong>: Sorts the listing. Can be set to 'date', 'distance', 'price' or 'upcoming_viewing'.<br />
-<strong>sort_order</strong>: 'd' for descending, 'a' for ascending.</p>
+<strong>listing_type</strong>: The listings you'd like to scrape. Set using the SaleType object or RentType. <br />
+<strong>sale_agreed</strong>: If set to True, we'll scrape listings that are sale agreed.  <br />
+<strong>sort_by</strong>: Sorts the listing. Can be set to 'date', 'distance', 'price' or 'upcoming_viewing'.  <br />
+<strong>sort_order</strong>: 'd' for descending, 'a' for ascending.<br />
+<strong>commercial_property_type</strong>: The commercial property type can be set using the CommercialType object.</p>
 <h3 id="get_address_line_1">get_address_line_1()</h3>
 <p>This method returns line 1 of the listing address.</p>
 <h3 id="get_address_line_2">get_address_line_2()</h3>
@@ -328,5 +341,5 @@ while pages:
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2017-03-13 13:48:10.337704
+Build Date UTC : 2017-05-27 17:10:36.975343
 -->
