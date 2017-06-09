@@ -150,6 +150,8 @@
             
                 <li class="third-level"><a href="#get_price">get_price()</a></li>
             
+                <li class="third-level"><a href="#get_area_size">get_area_size()</a></li>
+            
         
     
     </ul>
@@ -184,7 +186,6 @@ listings = daft.get_listings(
    listing_type=RentType.APARTMENTS,
    min_price=1000,
    max_price=1500,
-   sale_type='rent'
 )
 
 for listing in listings:
@@ -216,7 +217,7 @@ for listing in listings:
    print(listing.get_formalised_address())
    print(listing.get_daft_link())
 </code></pre>
-<p>Retrieve all properties for sale in Dublin.</p>
+<p>Retrieve all properties for sale in Dublin 15. This example loops through each page of listings and prints the result.</p>
 <pre><code>offset = 0
 pages = True
 
@@ -255,8 +256,8 @@ while pages:
 <strong>sale_type</strong>: Retrieve listings of a certain sale type. Can be set to 'sale' or 'rent'.<br />
 <strong>listing_type</strong>: The listings you'd like to scrape. Set using the SaleType object or RentType. <br />
 <strong>sale_agreed</strong>: If set to True, we'll scrape listings that are sale agreed.  <br />
-<strong>sort_by</strong>: Sorts the listing. Can be set to 'date', 'distance', 'price' or 'upcoming_viewing'.  <br />
-<strong>sort_order</strong>: 'd' for descending, 'a' for ascending.<br />
+<strong>sort_by</strong>: Sort the listings by price, distance, upcoming viewing or date using the SortType object.<br />
+<strong>sort_order</strong>: The SortOrder object allows you to sort the listings descending or ascending.
 <strong>commercial_property_type</strong>: The commercial property type can be set using the CommercialType object.</p>
 <h3 id="get_address_line_1">get_address_line_1()</h3>
 <p>This method returns line 1 of the listing address.</p>
@@ -285,7 +286,9 @@ while pages:
 <h3 id="get_num_bathrooms">get_num_bathrooms()</h3>
 <p>This method returns the number of bathrooms.</p>
 <h3 id="get_price">get_price()</h3>
-<p>This method returns the price.</p></div>
+<p>This method returns the price.</p>
+<h3 id="get_area_size">get_area_size()</h3>
+<p>The method returns the area size of the listing. This method should be called when retrieving commercial type listings.</p></div>
         
     </div>
 
@@ -338,5 +341,5 @@ while pages:
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2017-05-27 19:51:43.838225
+Build Date UTC : 2017-06-09 21:18:02.616303
 -->
