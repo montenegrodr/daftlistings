@@ -1,68 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A web scraper for Daft.ie">
+        <meta name="author" content="Anthony Bloomer">
+        
+        <link rel="shortcut icon" href="./img/favicon.ico">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A web scraper for Daft.ie"> 
-    <meta name="author" content="Anthony Bloomer">  
-    <link rel="shortcut icon" href="./img/favicon.ico">
+	<title>daftlistings</title>
 
-    <title>daftlistings</title>
+        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.css">
+        <link href="./css/base.css" rel="stylesheet">
 
-    <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
-    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href="./css/base.css" rel="stylesheet">
-    <link href="./css/cinder.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/highlight.css">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
-    <script>
-    WebFont.load({
-        google: {
-            families: ['Open Sans', 'PT Sans']
-        }
-    });
-    </script>
+        
+    </head>
 
-    
-    <script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    <body>
 
-    ga('create', 'UA-83559405-3', 'auto');
-    ga('send', 'pageview');
-    </script>
-    
-</head>
-
-<body class="homepage" >
-
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
-            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -70,7 +39,6 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            
 
             <!-- Main title -->
             <a class="navbar-brand" href=".">daftlistings</a>
@@ -78,144 +46,211 @@
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
             
+            
+                <li class="active">
+                    <a href=".">Home</a>
+                </li>
+            
+            
+            </ul>
 
+            <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
                         <i class="fa fa-search"></i> Search
                     </a>
                 </li>
+                <li class="disabled">
+                    <a rel="next" >
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a rel="prev" >
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
                 
-                
-                    <li>
-                        <a href="https://github.com/anthonybloomer/daftlistings">
-                            
-                                <i class="fa fa-github"></i>
-                            
-                            GitHub
-                        </a>
-                    </li>
+                <li>
+                    <a href="https://github.com/anthonybloomer/daftlistings">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
                 
             </ul>
         </div>
     </div>
 </div>
 
-    <div class="container">
-        
-        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="first-level active"><a href="#daftlistings">daftlistings</a></li>
+        <li class="main active"><a href="#overview">Overview</a></li>
         
-            <li class="second-level"><a href="#installation">Installation</a></li>
-            
+    
+        <li class="main "><a href="#installation">Installation</a></li>
         
-            <li class="second-level"><a href="#developing-locally">Developing locally</a></li>
-            
+    
+        <li class="main "><a href="#developing-locally">Developing locally</a></li>
         
-            <li class="second-level"><a href="#examples">Examples</a></li>
-            
+    
+        <li class="main "><a href="#examples">Examples</a></li>
         
-            <li class="second-level"><a href="#methods">Methods</a></li>
-            
-                <li class="third-level"><a href="#get_listings">get_listings()</a></li>
-            
-                <li class="third-level"><a href="#get_address_line_1">get_address_line_1()</a></li>
-            
-                <li class="third-level"><a href="#get_address_line_2">get_address_line_2()</a></li>
-            
-                <li class="third-level"><a href="#get_town">get_town()</a></li>
-            
-                <li class="third-level"><a href="#get_county">get_county()</a></li>
-            
-                <li class="third-level"><a href="#get_formalised_address">get_formalised_address()</a></li>
-            
-                <li class="third-level"><a href="#get_listing_image">get_listing_image()</a></li>
-            
-                <li class="third-level"><a href="#get_agent">get_agent()</a></li>
-            
-                <li class="third-level"><a href="#get_agent_url">get_agent_url()</a></li>
-            
-                <li class="third-level"><a href="#get_daft_link">get_daft_link()</a></li>
-            
-                <li class="third-level"><a href="#get_dwelling_type">get_dwelling_type()</a></li>
-            
-                <li class="third-level"><a href="#get_posted_since">get_posted_since()</a></li>
-            
-                <li class="third-level"><a href="#get_num_bedrooms">get_num_bedrooms()</a></li>
-            
-                <li class="third-level"><a href="#get_num_bathrooms">get_num_bathrooms()</a></li>
-            
-                <li class="third-level"><a href="#get_price">get_price()</a></li>
-            
-                <li class="third-level"><a href="#get_area_size">get_area_size()</a></li>
-            
+    
+        <li class="main "><a href="#daft">Daft</a></li>
+        
+            <li><a href="#set_verbose">set_verbose</a></li>
+        
+            <li><a href="#set_area">set_area</a></li>
+        
+            <li><a href="#set_county">set_county</a></li>
+        
+            <li><a href="#set_offset">set_offset</a></li>
+        
+            <li><a href="#set_min_price">set_min_price</a></li>
+        
+            <li><a href="#set_max_price">set_max_price</a></li>
+        
+            <li><a href="#set_listing_type">set_listing_type</a></li>
+        
+            <li><a href="#set_sale_agreed">set_sale_agreed</a></li>
+        
+            <li><a href="#set_min_beds">set_min_beds</a></li>
+        
+            <li><a href="#set_max_beds">set_max_beds</a></li>
+        
+            <li><a href="#set_sort_by">set_sort_by</a></li>
+        
+            <li><a href="#set_sort_order">set_sort_order</a></li>
+        
+            <li><a href="#set_commercial_property_type">set_commercial_property_type</a></li>
+        
+            <li><a href="#get_listings">get_listings</a></li>
+        
+    
+        <li class="main "><a href="#listing">Listing</a></li>
+        
+            <li><a href="#get_address_line_1">get_address_line_1</a></li>
+        
+            <li><a href="#get_address_line_2">get_address_line_2</a></li>
+        
+            <li><a href="#get_town">get_town</a></li>
+        
+            <li><a href="#get_county">get_county</a></li>
+        
+            <li><a href="#get_formalised_address">get_formalised_address</a></li>
+        
+            <li><a href="#get_listing_image">get_listing_image</a></li>
+        
+            <li><a href="#get_agent">get_agent</a></li>
+        
+            <li><a href="#get_agent_url">get_agent_url</a></li>
+        
+            <li><a href="#get_daft_link">get_daft_link</a></li>
+        
+            <li><a href="#get_dwelling_type">get_dwelling_type</a></li>
+        
+            <li><a href="#get_posted_since">get_posted_since</a></li>
+        
+            <li><a href="#get_num_bedrooms">get_num_bedrooms</a></li>
+        
+            <li><a href="#get_num_bathrooms">get_num_bathrooms</a></li>
+        
+            <li><a href="#get_price">get_price</a></li>
+        
+            <li><a href="#get_area_size">get_area_size</a></li>
         
     
     </ul>
 </div></div>
-        <div class="col-md-9" role="main">
+            <div class="col-md-9" role="main">
 
-<h1 id="daftlistings">daftlistings</h1>
-<p>A web scraper that enables programmatic interaction with daft.ie. Tested on Python 2.7 and Python 3.5.2<br />
-<a href="https://github.com/AnthonyBloomer/daftlistings">View on Github</a></p>
-<h2 id="installation">Installation</h2>
+<h1 id="overview">Overview</h1>
+<p>A library that enables programmatic interaction with daft.ie allowing you to retrieve properties by location, sale type, price and property type. daftlistings has been tested on Python 2.7 and Python 3.5.2</p>
+<h1 id="installation">Installation</h1>
+<p>daftlistings is available on the Python Package Index (PyPI) at https://pypi.python.org/pypi/daftlistings</p>
+<p>You can install daftlistings using pip.</p>
 <pre><code>virtualenv env
 source env/bin/activate
 pip install daftlistings
 </code></pre>
-<h2 id="developing-locally">Developing locally</h2>
+<h1 id="developing-locally">Developing locally</h1>
 <pre><code>git clone https://github.com/AnthonyBloomer/daftlistings.git
 cd daftlistings
-git checkout develop
 virtualenv env
 source env/bin/activate
 pip install -r requirements.txt
 </code></pre>
-<h2 id="examples">Examples</h2>
-<p>Get the current properties for rent in Dublin that are between €1000 and €1500 per month.</p>
+<h1 id="examples">Examples</h1>
+<p>Get the current properties for rent in Dublin that are between €1000 and
+€1500 per month.</p>
 <pre><code>from daftlistings import Daft, CommercialType, SaleType, RentType
 
 daft = Daft()
+daft.set_county('Dublin City')
+daft.set_area('Dublin 15')
+daft.set_listing_type(RentType.APARTMENTS)
+daft.set_min_price(1000)
+daft.set_max_price(1500)
 
-listings = daft.get_listings(
-   county='Dublin City',
-   area='Dublin 15',
-   listing_type=RentType.APARTMENTS,
-   min_price=1000,
-   max_price=1500,
-)
+listings = daft.get_listings()
 
 for listing in listings:
-   print(listing.get_formalised_address())
-   print(listing.get_daft_link())
+    print(listing.get_formalised_address())
+    print(listing.get_daft_link())
 </code></pre>
 <p>Retrieve commercial office listings in Dublin.</p>
-<pre><code>listings = daft.get_listings(
-    county='Dublin',
-    listing_type=SaleType.COMMERCIAL,
-    commercial_property_type=CommercialType.OFFICE
-)
+<pre><code>daft.set_county("Dublin")
+daft.set_listing_type(SaleType.COMMERCIAL)
+daft.set_commercial_property_type(CommercialType.OFFICE)
+
+listings = daft.get_listings()
 
 for listing in listings:
     print(listing.get_formalised_address())
     print(listing.get_daft_link())
 </code></pre>
 <p>Get the current sale agreed prices for properties in Dublin.</p>
-<pre><code>listings = daft.get_listings(
-   county='Dublin City',
-   area='Dublin 15',
-   listing_type=SaleType.PROPERTIES,
-   sale_agreed=True,
-   min_price=200000,
-   max_price=250000
-)
+<pre><code>daft.set_county('Dublin City')
+daft.set_area('Dublin 15')
+daft.set_listing_type(SaleType.PROPERTIES)
+daft.set_min_price(1000)
+daft.set_max_price(1500)
+daft.set_sale_agreed(True)
+
+listings = daft.get_listings()
 
 for listing in listings:
-   print(listing.get_formalised_address())
-   print(listing.get_daft_link())
+    print(listing.get_formalised_address())
+    print(listing.get_daft_link())
+</code></pre>
+<p>You can sort the listings by price, distance, upcoming viewing or date using the SortType object.
+The SortOrder object allows you to sort the listings descending or ascending. For example:</p>
+<pre><code>from daftlistings import SortOrder, SortType
+
+daft.set_county('Dublin City')
+daft.set_area('Dublin 15')
+daft.set_listing_type(SaleType.PROPERTIES)
+daft.set_min_price(150000)
+daft.set_max_price(175000)
+daft.set_sort_order(SortOrder.ASCENDING)
+daft.set_sort_by(SortType.PRICE)
+
+
+listings = daft.get_listings()
+
+for listing in listings:
+    print(listing.get_formalised_address())
+    print(listing.get_daft_link())
+    print(listing.get_price())
 </code></pre>
 <p>Retrieve all properties for sale in Dublin 15. This example loops through each page of listings and prints the result.</p>
 <pre><code>offset = 0
@@ -223,12 +258,12 @@ pages = True
 
 while pages:
 
-    listings = d.get_listings(
-        county='Dublin City',
-        area='Dublin 15',
-        offset=offset,
-        listing_type=SaleType.PROPERTIES
-    )
+    daft.set_county('Dublin City')
+    daft.set_area('Dublin 15')
+    daft.set_listing_type(SaleType.PROPERTIES)
+    daft.set_offset(offset)
+
+    listings = daft.get_listings()
 
     if not listings:
         pages = False
@@ -243,103 +278,105 @@ while pages:
 
     offset += 10
 </code></pre>
-<h2 id="methods">Methods</h2>
-<h3 id="get_listings">get_listings()</h3>
-<p>The <strong>get_listings</strong> method accepts the following parameters.</p>
-<p><strong>max_beds</strong>: The maximum number of beds.<br />
-<strong>min_beds</strong>: The minimum number of beds.<br />
-<strong>max_price</strong>: The maximum value of the listing<br />
-<strong>min_price</strong>: The minimum value of the listing<br />
-<strong>county</strong>: The county to get listings for.<br />
-<strong>area</strong>: The area in the county to get listings for. Optional.<br />
-<strong>offset</strong>: The page number.<br />
-<strong>sale_type</strong>: Retrieve listings of a certain sale type. Can be set to 'sale' or 'rent'.<br />
-<strong>listing_type</strong>: The listings you'd like to scrape. Set using the SaleType object or RentType. <br />
-<strong>sale_agreed</strong>: If set to True, we'll scrape listings that are sale agreed.  <br />
-<strong>sort_by</strong>: Sort the listings by price, distance, upcoming viewing or date using the SortType object.<br />
-<strong>sort_order</strong>: The SortOrder object allows you to sort the listings descending or ascending.
-<strong>commercial_property_type</strong>: The commercial property type can be set using the CommercialType object.</p>
-<h3 id="get_address_line_1">get_address_line_1()</h3>
+<h1 id="daft">Daft</h1>
+<h2 id="set_verbose">set_verbose</h2>
+<p>Set to True to print the HTTP status code and HTML content when making a request to Daft.</p>
+<h2 id="set_area">set_area</h2>
+<p>The area to retrieve listings from.</p>
+<h2 id="set_county">set_county</h2>
+<p>The county to retrieve listings from.</p>
+<h2 id="set_offset">set_offset</h2>
+<p>Set the page number.</p>
+<h2 id="set_min_price">set_min_price</h2>
+<p>The minimum price of the listing.</p>
+<h2 id="set_max_price">set_max_price</h2>
+<p>The maximum price of the listing.</p>
+<h2 id="set_listing_type">set_listing_type</h2>
+<p>The listings you'd like to scrape i.e houses, properties, auction, commercial or apartments.
+Use the SaleType or RentType enum to select the listing type. i.e set_listing_type(SaleType.PROPERTIES)</p>
+<h2 id="set_sale_agreed">set_sale_agreed</h2>
+<p>If set to True, we'll scrape listings that are sale agreed.</p>
+<h2 id="set_min_beds">set_min_beds</h2>
+<p>The minimum number of beds.</p>
+<h2 id="set_max_beds">set_max_beds</h2>
+<p>The maximum number of beds.</p>
+<h2 id="set_sort_by">set_sort_by</h2>
+<p>Use this method to sort by price, distance, upcoming viewing or date using the SortType object.</p>
+<h2 id="set_sort_order">set_sort_order</h2>
+<p>Use the SortOrder object to sort the listings descending or ascending.</p>
+<h2 id="set_commercial_property_type">set_commercial_property_type</h2>
+<p>Use the CommercialType object to set the commercial property type.</p>
+<h2 id="get_listings">get_listings</h2>
+<p>The get listings function returns an array of Listing objects.</p>
+<h1 id="listing">Listing</h1>
+<h2 id="get_address_line_1">get_address_line_1</h2>
 <p>This method returns line 1 of the listing address.</p>
-<h3 id="get_address_line_2">get_address_line_2()</h3>
+<h2 id="get_address_line_2">get_address_line_2</h2>
 <p>This method returns line 2 of the listing address.</p>
-<h3 id="get_town">get_town()</h3>
+<h2 id="get_town">get_town</h2>
 <p>This method returns the town.</p>
-<h3 id="get_county">get_county()</h3>
+<h2 id="get_county">get_county</h2>
 <p>This method returns the county.</p>
-<h3 id="get_formalised_address">get_formalised_address()</h3>
+<h2 id="get_formalised_address">get_formalised_address</h2>
 <p>This method returns the full address.</p>
-<h3 id="get_listing_image">get_listing_image()</h3>
+<h2 id="get_listing_image">get_listing_image</h2>
 <p>This method returns the URL of the listing image.</p>
-<h3 id="get_agent">get_agent()</h3>
+<h2 id="get_agent">get_agent</h2>
 <p>This method returns the agent name.</p>
-<h3 id="get_agent_url">get_agent_url()</h3>
+<h2 id="get_agent_url">get_agent_url</h2>
 <p>This method returns the agent URL.</p>
-<h3 id="get_daft_link">get_daft_link()</h3>
+<h2 id="get_daft_link">get_daft_link</h2>
 <p>This method returns the URL of the listing.</p>
-<h3 id="get_dwelling_type">get_dwelling_type()</h3>
+<h2 id="get_dwelling_type">get_dwelling_type</h2>
 <p>This method returns the dwelling type.</p>
-<h3 id="get_posted_since">get_posted_since()</h3>
+<h2 id="get_posted_since">get_posted_since</h2>
 <p>This method returns the date the listing was posted.</p>
-<h3 id="get_num_bedrooms">get_num_bedrooms()</h3>
+<h2 id="get_num_bedrooms">get_num_bedrooms</h2>
 <p>This method returns the number of bedrooms.</p>
-<h3 id="get_num_bathrooms">get_num_bathrooms()</h3>
+<h2 id="get_num_bathrooms">get_num_bathrooms</h2>
 <p>This method returns the number of bathrooms.</p>
-<h3 id="get_price">get_price()</h3>
+<h2 id="get_price">get_price</h2>
 <p>This method returns the price.</p>
-<h3 id="get_area_size">get_area_size()</h3>
+<h2 id="get_area_size">get_area_size</h2>
 <p>The method returns the area size of the listing. This method should be called when retrieving commercial type listings.</p></div>
-        
-    </div>
+        </div>
 
-    <footer class="col-md-12 text-center">
-        <hr>
-        <p>
-        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
-    </footer>
+        <footer class="col-md-12">
+            <hr>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
 
-    <script src="./js/jquery-1.10.2.min.js"></script>
-    <script src="./js/bootstrap-3.0.3.min.js"></script>
-    <script src="./js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script>
-    var base_url = '.';
-    </script>
-    <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-    <script src="./js/base.js"></script>
+        <script src="./js/jquery-1.10.2.min.js"></script>
+        <script src="./js/bootstrap-3.0.3.min.js"></script>
+        <script src="./js/highlight.pack.js"></script>
+        <script>var base_url = '.';</script>
+        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+        <script src="./js/base.js"></script>
 
-    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        From here you can search these documents. Enter your search terms below.
-                    </p>
-                    <form role="form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                        </div>
-                    </form>
-                    <div id="mkdocs-search-results"></div>
-                </div>
-                <div class="modal-footer">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
     </body>
-
 </html>
-
-<!--
-MkDocs version : 0.15.3
-Build Date UTC : 2017-06-09 21:18:02.616303
--->
