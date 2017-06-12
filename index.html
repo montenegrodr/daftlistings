@@ -166,7 +166,19 @@
         
             <li><a href="#get_price">get_price</a></li>
         
+            <li><a href="#get_price_change">get_price_change</a></li>
+        
+            <li><a href="#get_facilities">get_facilities</a></li>
+        
+            <li><a href="#get_features">get_features</a></li>
+        
             <li><a href="#get_area_size">get_area_size</a></li>
+        
+            <li><a href="#get_contact_number">get_contact_number</a></li>
+        
+            <li><a href="#documentation">Documentation</a></li>
+        
+            <li><a href="#contributing">Contributing</a></li>
         
     
     </ul>
@@ -183,6 +195,8 @@ source env/bin/activate
 pip install daftlistings
 </code></pre>
 <h1 id="developing-locally">Developing locally</h1>
+<p>This library is under active development.
+Before new versions are pushed to PyPI, you can download the development version to avail of any new features.</p>
 <pre><code>git clone https://github.com/AnthonyBloomer/daftlistings.git
 cd daftlistings
 virtualenv env
@@ -337,8 +351,33 @@ Use the SaleType or RentType enum to select the listing type. i.e set_listing_ty
 <p>This method returns the number of bathrooms.</p>
 <h2 id="get_price">get_price</h2>
 <p>This method returns the price.</p>
+<h2 id="get_price_change">get_price_change</h2>
+<p>This method returns the price change.</p>
+<h2 id="get_facilities">get_facilities</h2>
+<p>This method returns the properties facilities.</p>
+<h2 id="get_features">get_features</h2>
+<p>This method returns the properties features.</p>
 <h2 id="get_area_size">get_area_size</h2>
-<p>The method returns the area size of the listing. This method should be called when retrieving commercial type listings.</p></div>
+<p>The method returns the area size of the listing. This method should be called when retrieving commercial type listings.</p>
+<h2 id="get_contact_number">get_contact_number</h2>
+<p>This method returns the contact number.</p>
+<h2 id="documentation">Documentation</h2>
+<p>The current documentation can be viewed here: https://anthonybloomer.github.io/daftlistings/</p>
+<p>The documentation has been created using mkdocs.</p>
+<p>To update the documentation, clone the repository and edit <strong>docs/index.md</strong></p>
+<p>To view your changes, run:</p>
+<pre><code>mkdocs serve
+</code></pre>
+<p>To build the documentation, run:</p>
+<pre><code>mkdocs build
+</code></pre>
+<p>This will create a directory called site. Copy the site directory to a new directory and checkout gh-pages</p>
+<pre><code>git checkout gh-pages
+</code></pre>
+<p>Copy any changes from the <strong>site</strong> directory to this directory and push your changes.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Contribute to daftlistings by suggesting new features or providing feedback / criticism.
+Pull requests are always welcome too so feel free to hack away.</p></div>
         </div>
 
         <footer class="col-md-12">
