@@ -26,6 +26,7 @@ Before new versions are pushed to PyPI, you can download the development version
 
     git clone https://github.com/AnthonyBloomer/daftlistings.git
     cd daftlistings
+    git checkout develop
     virtualenv env
     source env/bin/activate
     pip install -r requirements.txt
