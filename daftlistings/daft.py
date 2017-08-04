@@ -5,7 +5,7 @@ from exception import DaftInputException
 
 
 class Daft(object):
-    def __init__(self):
+    def __init__(self, proxy):
         self._base = 'http://www.daft.ie/'
         self._verbose = False
         self._open_viewing = False
@@ -25,6 +25,7 @@ class Daft(object):
         self._commercial_max_size = None
         self._query_params = ""
         self._price = ""
+        self._proxy = proxy
 
     def set_verbose(self, verbose):
         """
@@ -232,7 +233,7 @@ class Daft(object):
                 self._query_params += str(QueryParam.SORT_ORDER) + str(SortOrder.DESCENDING)
                 self._query_params += str(QueryParam.SORT_BY) + self._sort_by
 
-        request = Request(verbose=self._verbose)
+        request = Request(verbose=self._verbose, proxy=self._proxy)
 
         url = self._base + self._county + str(self._listing_type) + str(self._commercial_property_type) + str(
             self._area) + '?offset=' + str(self._offset) + self._query_params
@@ -240,5 +241,5 @@ class Daft(object):
         soup = request.get(url)
         divs = soup.find_all("div", {"class": "box"})
         listings = []
-        [listings.append(Listing(div)) for div in divs]
+        [listings.append(Listing(div, self._proxy)) for div in divs]
         return listings

@@ -4,12 +4,15 @@ from bs4 import BeautifulSoup
 
 
 class Request:
-    def __init__(self, verbose=False):
+    def __init__(self, verbose=False, proxy=None):
         self._headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0'}
         self._verbose = verbose
+        self._proxies = {
+            "http": proxy
+        }
 
     def get(self, url):
-        req = requests.get(url, headers=self._headers)
+        req = requests.get(url, headers=self._headers, proxies=self._proxies)
         print("URL: " + req.url)
         print("Status code: " + str(req.status_code))
 
@@ -23,7 +26,7 @@ class Request:
         return soup
 
     def post(self, url, params):
-        req = requests.post(url, params=params, headers=self._headers)
+        req = requests.post(url, params=params, headers=self._headers, proxies=self._proxies)
         
         print("URL: " + req.url)
         print("Status code: " + str(req.status_code))
