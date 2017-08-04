@@ -2,8 +2,9 @@ from request import Request
 
 
 class Listing(object):
-    def __init__(self, data):
+    def __init__(self, data, proxy):
         self._data = data
+        self._proxy = proxy
 
     def get_price(self):
         """
@@ -43,7 +44,7 @@ class Listing(object):
         """
         facilities = []
         link = self.get_daft_link()
-        req = Request()
+        req = Request(proxy=self._proxy)
         soup = req.get(link)
         try:
             facility_table = soup.find('table', {'id': 'facilities'})
@@ -60,7 +61,7 @@ class Listing(object):
         """
         features = []
         link = self.get_daft_link()
-        req = Request()
+        req = Request(proxy=self._proxy)
         soup = req.get(link)
         try:
             feats = soup.find('div', {'id': 'features'})
@@ -153,7 +154,7 @@ class Listing(object):
         :return:
         """
         try:
-            req = Request()
+            req = Request(proxy=self._proxy)
             link = self.get_daft_link()
             soup = req.get(link)
             span = soup.find("span", {"class": "p1"})
@@ -189,7 +190,7 @@ class Listing(object):
         This method returns the contact phone number.
         :return:
         """
-        req = Request()
+        req = Request(proxy=self._proxy)
         link = self.get_daft_link()
         soup = req.get(link)
         try:
@@ -281,7 +282,7 @@ class Listing(object):
         :param message: Your message.
         :return: 
         """
-        req = Request()
+        req = Request(proxy=self._proxy)
         link = self.get_daft_link()
         soup = req.get(link)
 
