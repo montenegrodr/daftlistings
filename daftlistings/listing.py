@@ -61,7 +61,7 @@ class Listing(object):
         """
         features = []
         link = self.get_daft_link()
-        req = Request(proxy=self._proxy)
+        req = Request(con_conf=self._con_conf)
         soup = req.get(link)
         try:
             feats = soup.find('div', {'id': 'features'})
@@ -154,7 +154,7 @@ class Listing(object):
         :return:
         """
         try:
-            req = Request(proxy=self._proxy)
+            req = Request(con_conf=self._con_conf)
             link = self.get_daft_link()
             soup = req.get(link)
             span = soup.find("span", {"class": "p1"})
@@ -190,7 +190,7 @@ class Listing(object):
         This method returns the contact phone number.
         :return:
         """
-        req = Request(proxy=self._proxy)
+        req = Request(con_conf=self._con_conf)
         link = self.get_daft_link()
         soup = req.get(link)
         try:
@@ -282,7 +282,7 @@ class Listing(object):
         :param message: Your message.
         :return: 
         """
-        req = Request(proxy=self._proxy)
+        req = Request(con_conf=self._con_conf)
         link = self.get_daft_link()
         soup = req.get(link)
 
