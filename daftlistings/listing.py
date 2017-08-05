@@ -2,9 +2,9 @@ from request import Request
 
 
 class Listing(object):
-    def __init__(self, data, proxy):
+    def __init__(self, data, con_conf):
         self._data = data
-        self._proxy = proxy
+        self._con_conf = con_conf
 
     def get_price(self):
         """
@@ -44,7 +44,7 @@ class Listing(object):
         """
         facilities = []
         link = self.get_daft_link()
-        req = Request(proxy=self._proxy)
+        req = Request(con_conf=self._con_conf)
         soup = req.get(link)
         try:
             facility_table = soup.find('table', {'id': 'facilities'})
