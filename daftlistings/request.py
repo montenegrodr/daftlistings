@@ -12,11 +12,14 @@ class Request:
         }
 
     def get(self, url):
-        req = requests.get(url, headers=self._headers, proxies=self._proxies)
-        print("URL: " + req.url)
-        print("Status code: " + str(req.status_code))
+        req = requests.get(url,
+                           headers=self._headers,
+                           proxies=self._proxies,
+                           timeout=1)
 
         if self._verbose:
+            print("URL: " + req.url)
+            print("Status code: " + str(req.status_code))
             print req.content
 
         if req.status_code != 200:
@@ -26,11 +29,17 @@ class Request:
         return soup
 
     def post(self, url, params):
-        req = requests.post(url, params=params, headers=self._headers, proxies=self._proxies)
+        req = requests.post(url,
+                            params=params,
+                            headers=self._headers,
+                            proxies=self._proxies,
+                            timeout=1)
         
-        print("URL: " + req.url)
-        print("Status code: " + str(req.status_code))
-        
+        if self._verbose:
+            print("URL: " + req.url)
+            print("Status code: " + str(req.status_code))
+            print req.content
+
         if req.status_code != 200:
             raise DaftRequestException(status_code=req.status_code, reason=req.reason)
             
